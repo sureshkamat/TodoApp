@@ -24,18 +24,113 @@ function displayTodos() {
       var td2 = document.createElement("td");
       td2.innerText = elem.taskname;
 
+      var update=document.createElement("td")
+      update.textContent="📝";
+      update.addEventListener("click",function(){
+        updateTodo(elem,td2);
+      })
+
+
+
+
       var td7 = document.createElement("td");
       td7.innerText = "Delete";
       td7.style.backgroundColor="red";
       td7.style.color="white";
 
-    //   td7.addEventListener("click", function () {
-    //     addTodelete(elem);
-    //   });
+      td7.addEventListener("click", function () {
+        addTodelete(elem);
+      });
 
       
-      row.append(td1, td2,td7);
+      row.append(td1, td2,update,td7);
 
       document.querySelector("tbody").append(row);
     });
   }
+
+
+
+
+  //addd to tasj json file code
+document.getElementById("addbtn").addEventListener("click",addTodo);
+
+  async function addTodo() {
+    try {
+      let todoTask = document.getElementById('addtext').value
+      let response = await fetch("http://localhost:3000/todos", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          "taskname": todoTask
+        })
+      });
+  
+      if(response.status == 201) {
+        console.log('Successfully created!')
+      } else {
+        console.log('Something went wrong!')
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  
+
+//delete task
+async function addTodelete(elem) {
+  try {
+		 let response = await fetch("http://localhost:3000/todos/" + Number(elem.id), {
+			method: "DELETE"
+		});
+
+		if(response.status == 200) {
+			console.log('Successfully deleted!')
+		} else {
+			console.log('Something went wrong!')
+		}
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+//add to update
+async function updateTodo(elem,td2) {
+  try {   
+		var input = document.createElement("input");
+    input.setAttribute('type', 'text');
+    input.setAttribute("id","updatedvalue")
+    input.setAttribute("placeholder","Enter Updated text")
+    input.setAttribute("value","Revise");
+    td2.appendChild(input);
+
+		let todoTaskToUpdate = document.getElementById('updatedvalue').value
+
+    let response = await fetch("http://localhost:3000/todos/" + Number(elem.id), {
+			method: "PATCH",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				"taskname": todoTaskToUpdate
+			})
+		});
+
+		if(response.status == 200) {
+			console.log('Successfully updated!')
+		} else {
+			console.log('Something went wrong!')
+		}
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+
+
+
+
+
+  getTodos();

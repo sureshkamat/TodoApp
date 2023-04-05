@@ -1,7 +1,7 @@
 {
   "name": "todoapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "todo app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,10 +11,14 @@
     "url": "git+https://github.com/sureshkamat/TodoApp.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Suresh Kamat",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sureshkamat/TodoApp/issues"
   },
-  "homepage": "https://github.com/sureshkamat/TodoApp#readme"
+  "homepage": "https://github.com/sureshkamat/TodoApp#readme",
+  "dependencies": {
+    "json-server": "^0.17.3",
+    "uuid": "^9.0.0"
+  }
 }

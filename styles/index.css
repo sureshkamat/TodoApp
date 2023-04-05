@@ -10,7 +10,9 @@ body{
     align-items: center;
     border: 1px solid;
     background-color: whitesmoke;
+   
 }
+
 #parent{
     width: 80%;
     margin:auto;    
@@ -19,7 +21,6 @@ body{
     
 }
 #child1{
-    margin-left: 49px;
     display: flex;
     flex-wrap: wrap;
     
@@ -54,7 +55,7 @@ th {
 
 table {
   border-collapse: collapse;
-  width: 90%;
+  width: 100%;
   margin: auto;
   margin-top: 50px;
 }
@@ -67,4 +68,10 @@ td {
 tr > th {
   background-color: rgb(214, 183, 8);
   color: white;
+}
+#updateinput{
+  margin: 20px;
+  border: 1px dashed;
+  height: 100px;
+  width: 500px;
 }

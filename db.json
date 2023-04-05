@@ -1,6 +1,20 @@
 {
-    "todos": [
-      { "id": 1, "taskname": "json-server"},
-      { "id": 2, "taskname": "json-server"}
-    ]
-  }
+  "todos": [
+    {
+      "taskname": "Revise",
+      "id": 1
+    },
+    {
+      "taskname": "CSS",
+      "id": 2
+    },
+    {
+      "taskname": "JS",
+      "id": 3
+    },
+    {
+      "taskname": "JAVA",
+      "id": 4
+    }
+  ]
+}
