@@ -103,7 +103,8 @@ async function updateTodo(elem,td2) {
     input.setAttribute('type', 'text');
     input.setAttribute("id","updatedvalue")
     input.setAttribute("placeholder","Enter Updated text")
-    input.setAttribute("value","Revise");
+    input.setAttribute("value",elem.taskname);
+    td2.textContent="";
     td2.appendChild(input);
 
 		let todoTaskToUpdate = document.getElementById('updatedvalue').value
@@ -127,8 +128,6 @@ async function updateTodo(elem,td2) {
     console.log(err);
   }
 }
-
-
 
 
 

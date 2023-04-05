@@ -1,19 +1,19 @@
 {
   "todos": [
     {
-      "taskname": "Revise",
+      "taskname": "JS",
       "id": 1
     },
     {
-      "taskname": "CSS",
+      "taskname": "HTML",
       "id": 2
     },
     {
-      "taskname": "JS",
+      "taskname": "CSS",
       "id": 3
     },
     {
-      "taskname": "JAVA",
+      "taskname": "NODE",
       "id": 4
     }
   ]
