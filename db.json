@@ -1,0 +1,6 @@
+{
+    "todos": [
+      { "id": 1, "taskname": "json-server"},
+      { "id": 2, "taskname": "json-server"}
+    ]
+  }

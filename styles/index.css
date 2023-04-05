@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    padding: 0;
+   
+}
+#navbar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid;
+    background-color: whitesmoke;
+}
+#parent{
+    width: 80%;
+    margin:auto;    
+    padding-top: 20px;
+    margin-top: 20px;
+    
+}
+#child1{
+    margin-left: 49px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+input{
+    width: 500px;
+    height: 30px;
+    font-size: large;
+    border-radius: 5px;
+}
+#addbtn{
+    width: 100px;
+    height: 36px;
+    margin-left: -3px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+
+}
+#addbtn:hover{
+    background-color: white;
+    color: black;
+}
+table,
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+th,
+td {
+  padding: 15px;
+}
+
+tr > th {
+  background-color: rgb(214, 183, 8);
+  color: white;
+}
