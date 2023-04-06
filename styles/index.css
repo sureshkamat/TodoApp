@@ -75,3 +75,13 @@ tr > th {
   height: 100px;
   width: 500px;
 }
+#updatedbtn{
+  width: 100px;
+    height: 36px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 10px;
+}

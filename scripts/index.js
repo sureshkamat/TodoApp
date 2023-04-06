@@ -26,7 +26,8 @@ function displayTodos() {
 
       var update=document.createElement("td")
       update.textContent="📝";
-      update.addEventListener("click",function(){
+      update.addEventListener("click",function(r){
+        r.preventDefault()
         updateTodo(elem,td2);
       })
 
@@ -102,14 +103,27 @@ async function updateTodo(elem,td2) {
 		var input = document.createElement("input");
     input.setAttribute('type', 'text');
     input.setAttribute("id","updatedvalue")
-    input.setAttribute("placeholder","Enter Updated text")
     input.setAttribute("value",elem.taskname);
-    td2.textContent="";
-    td2.appendChild(input);
+    td2.textContent=""; 
+    let btn=document.createElement("button");
+    
+    btn.setAttribute("id","updatedbtn");
+    btn.textContent="Update";
+    btn.addEventListener("click",function(){
+      submitUpdate(elem);
+    })
+    td2.append(input,btn);
 
-		let todoTaskToUpdate = document.getElementById('updatedvalue').value
+		
+  } catch (err) {
+    console.log(err);
+  }
+}
 
-    let response = await fetch("http://localhost:3000/todos/" + Number(elem.id), {
+async function submitUpdate(elem){
+  let todoTaskToUpdate = document.getElementById('updatedvalue').value
+
+     let response = await fetch("http://localhost:3000/todos/" + Number(elem.id), {
 			method: "PATCH",
 			headers: {
 				"Content-Type": "application/json",
@@ -123,10 +137,7 @@ async function updateTodo(elem,td2) {
 			console.log('Successfully updated!')
 		} else {
 			console.log('Something went wrong!')
-		}
-  } catch (err) {
-    console.log(err);
-  }
+		}  
 }
 
 
